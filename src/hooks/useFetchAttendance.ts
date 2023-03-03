@@ -4,7 +4,6 @@ const useFetchAttendance = () => {
 
     const fetch = async() => {
         const api = new ApiService();
-        return []
 
         const result = await api.getAttendance();
 

@@ -21,12 +21,11 @@ const AttendanceProvider = ({ children }: props) => {
     const [allPages, setAllPages] = useState<number>(allAttendance.length > pageSize ?  Math.ceil(allAttendance.length / pageSize) : 1);
 
     const attendancePaginated = allAttendance.filter(row => {
-        const meetsSearchCriteria = searchText? 
+        const searchCriteria = searchText? 
             row.deputado.toLowerCase().includes(searchText.toLowerCase())
             : true;
-            console.log('meet', searchText);
 
-        return meetsSearchCriteria;
+        return searchCriteria;
     }).slice(start, end)
 
     const updateSearchText = (value: string) => {
@@ -39,11 +38,13 @@ const AttendanceProvider = ({ children }: props) => {
                 : true
             )
 
-            console.log('update', value, attendanceFiltered.length);
-
             return attendanceFiltered.length > pageSize ?  Math.ceil(attendanceFiltered.length / pageSize) : 1
         })
     };
+
+    useEffect(() => {
+        fetch().then(res => console.log(res))
+    },[])
 
     return (
         <AttendanceContext.Provider
