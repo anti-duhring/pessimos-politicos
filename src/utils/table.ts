@@ -1,0 +1,37 @@
+import { styled } from '@mui/material/styles';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableRow from '@mui/material/TableRow';
+
+export const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: theme.palette.common.white,
+      color: theme.palette.grey.A700,
+    },
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 14,
+    },
+  }));
+export const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    // '&:nth-of-type(odd)': {
+    //   backgroundColor: theme.palette.action.hover,
+    // },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+      border: 0,
+    },
+    '&:hover': {
+      backgroundColor: theme.palette.action.hover,
+    }
+  }));
+  
+export const createData = (
+    name: string,
+    calories: number,
+    fat: number,
+    carbs: number,
+    protein: number,
+  ) => {
+    return { name, calories, fat, carbs, protein };
+  }
+
+  export const rows = [{"deputado": "Abilio Brunini (PL-MT)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Acácio Favacho (MDB-AP)", "presencas": 7, "ausencias_justificadas": 1, "ausencias_nao_justificadas": 3}, {"deputado": "Adail Filho (REPUBLICANOS-AM)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Adilson Barroso (PL-SP)", "presencas": 9, "ausencias_justificadas": 1, "ausencias_nao_justificadas": 0}, {"deputado": "Adolfo Viana (PSDB-BA)", "presencas": 9, "ausencias_justificadas": 1, "ausencias_nao_justificadas": 1}, {"deputado": "Adriana Ventura (NOVO-SP)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Adriano do Baldy (PP-GO)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Aécio Neves (PSDB-MG)", "presencas": 8, "ausencias_justificadas": 3, "ausencias_nao_justificadas": 0}, {"deputado": "Afonso Florence (PT-BA)", "presencas": 1, "ausencias_justificadas": 1, "ausencias_nao_justificadas": 1}, {"deputado": "Afonso Hamm (PP-RS)", "presencas": 9, "ausencias_justificadas": 2, "ausencias_nao_justificadas": 0}, {"deputado": "Afonso Motta (PDT-RS)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Aguinaldo Ribeiro (PP-PB)", "presencas": 10, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 1}, {"deputado": "Airton Faleiro (PT-PA)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "AJ Albuquerque (PP-CE)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Alberto Fraga (PL-DF)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Alberto Mourão (MDB-SP)", "presencas": 10, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 1}, {"deputado": "Albuquerque (REPUBLICANOS-RR)", "presencas": 10, "ausencias_justificadas": 1, "ausencias_nao_justificadas": 0}, {"deputado": "Alceu Moreira (MDB-RS)", "presencas": 9, "ausencias_justificadas": 2, "ausencias_nao_justificadas": 0}, {"deputado": "Alencar Santana (PT-SP)", "presencas": 8, "ausencias_justificadas": 1, "ausencias_nao_justificadas": 2}, {"deputado": "Alex Manente (CIDADANIA-SP)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Alex Santana (REPUBLICANOS-BA)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Alexandre Guimarães (REPUBLICANOS-TO)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Alexandre Leite (UNIAO-SP)", "presencas": 10, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 1}, {"deputado": "Alexandre Lindenmeyer (PT-RS)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Alexandre Padilha (PT-SP)", "presencas": 2, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Alfredinho (PT-SP)", "presencas": 8, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Alfredo Gaspar (UNIAO-AL)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Alice Portugal (PCdoB-BA)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Aliel Machado (PV-PR)", "presencas": 8, "ausencias_justificadas": 3, "ausencias_nao_justificadas": 0}, {"deputado": "Altineu Côrtes (PL-RJ)", "presencas": 4, "ausencias_justificadas": 7, "ausencias_nao_justificadas": 0}, {"deputado": "Aluisio Mendes (REPUBLICANOS-MA)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Amália Barros (PL-MT)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Amanda Gentil (PP-MA)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Amaro Neto (REPUBLICANOS-ES)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Amom Mandel (CIDADANIA-AM)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Ana Paula Leão (PP-MG)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Ana Paula Lima (PT-SC)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Ana Pimentel (PT-MG)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "André Fernandes (PL-CE)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "André Ferreira (PL-PE)", "presencas": 8, "ausencias_justificadas": 3, "ausencias_nao_justificadas": 0}, {"deputado": "André Figueiredo (PDT-CE)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "André Fufuca (PP-MA)", "presencas": 9, "ausencias_justificadas": 2, "ausencias_nao_justificadas": 0}, {"deputado": "André Janones (AVANTE-MG)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Andreia Siqueira (MDB-PA)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Antônia Lúcia (REPUBLICANOS-AC)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Antonio Andrade (REPUBLICANOS-TO)", "presencas": 9, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 2}, {"deputado": "Antonio Brito (PSD-BA)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Antonio Carlos Rodrigues (PL-SP)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Antônio Doido (MDB-PA)", "presencas": 10, "ausencias_justificadas": 1, "ausencias_nao_justificadas": 0}, {"deputado": "Any Ortiz (CIDADANIA-RS)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Arlindo Chinaglia (PT-SP)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Arnaldo Jardim (CIDADANIA-SP)", "presencas": 11, "ausencias_justificadas": 0, "ausencias_nao_justificadas": 0}, {"deputado": "Arthur Lira (PP-AL)", "presencas": 10, "ausencias_justificadas": 1, "ausencias_nao_justificadas": 0}, {"deputado": "Arthur Oliveira Maia (UNIAO-BA)", "presencas": 5, "ausencias_justificadas": 1, "ausencias_nao_justificadas": 5}]
