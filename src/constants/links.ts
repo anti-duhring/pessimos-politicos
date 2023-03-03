@@ -1,9 +1,9 @@
 export const links = {
     home: {
-        root: '/'
+        root: '/pessimos-politicos/'
     },
     attendance: {
-        root: '/presenca'
+        root: '/pessimos-politicos/presenca'
     }
 }
 

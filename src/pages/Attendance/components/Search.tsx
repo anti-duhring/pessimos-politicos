@@ -12,7 +12,7 @@ import AttendanceContext from '../../../context/Attendance';
 
 
 const Search = () => {
-    const { searchText, setSearchText } = useContext(AttendanceContext);
+    const { searchText, updateSearchText } = useContext(AttendanceContext);
     return (
         <Paper 
             elevation={1}
@@ -40,7 +40,7 @@ const Search = () => {
                 }}
 
                 value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
+                onChange={(e) => updateSearchText(e.target.value)}
             />
         {/* <Button 
             aria-label="filtrar"

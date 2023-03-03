@@ -11,37 +11,47 @@ const AttendanceProvider = ({ children }: props) => {
     const { fetch } = useFetchAttendance();
     
     const [searchText, setSearchText] = useState<string>('');
-    const [allAtendances, setAllAtendances] = useState<TAttendance[]>(attendanceData);
+    const [allAttendance, setAllAttendances] = useState<TAttendance[]>(attendanceData);
+    
     const [pagination, setPagination] = useState<number>(1);
-    const [attendance, setAttendance] = useState<TAttendance[]>([]);
+    const pageSize = 25;
+    const start = (pagination - 1) * pageSize;
+    const end = pagination * pageSize - 1;
 
-    let allPages = allAtendances.length > 50 ?  Math.round(allAtendances.length / 50) : 1;
-    const pageSize = 50;
+    const [allPages, setAllPages] = useState<number>(allAttendance.length > pageSize ?  Math.ceil(allAttendance.length / pageSize) : 1);
 
-    useEffect(() => {
-        const start = (pagination - 1) * pageSize;
-        const end = start + pageSize; 
+    const attendancePaginated = allAttendance.filter(row => {
+        const meetsSearchCriteria = searchText? 
+            row.deputado.toLowerCase().includes(searchText.toLowerCase())
+            : true;
+            console.log('meet', searchText);
 
-        setAttendance(() => {
-            allAtendances.sort((a, b) => b.ausencias_nao_justificadas - a.ausencias_nao_justificadas);
-            
-            const attendancesFiltered = allAtendances.filter(row =>
-                searchText != ''? 
-                row.deputado.toLowerCase().indexOf(searchText.toLowerCase()) != -1 
+        return meetsSearchCriteria;
+    }).slice(start, end)
+
+    const updateSearchText = (value: string) => {
+        setSearchText(value);
+        setPagination(1);
+        setAllPages(oldList => {
+            const attendanceFiltered = allAttendance.filter(row => 
+                value? 
+                row.deputado.toLowerCase().includes(value.toLowerCase())
                 : true
             )
 
-            return attendancesFiltered.slice(start, end)
-        })
-    },[searchText, pagination])
+            console.log('update', value, attendanceFiltered.length);
 
+            return attendanceFiltered.length > pageSize ?  Math.ceil(attendanceFiltered.length / pageSize) : 1
+        })
+    };
 
     return (
         <AttendanceContext.Provider
             value={{
-                attendance,
+                attendance: attendancePaginated,
                 searchText,
                 setSearchText,
+                updateSearchText,
                 pagination,
                 setPagination,
                 allPages
