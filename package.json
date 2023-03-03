@@ -1,7 +1,7 @@
 {
   "name": "pessimos-politicos",
   "version": "0.1.0",
-  "homepage": "https://pessimos-politicos.github.io",
+  "homepage": "https://anti-duhring.github.io",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
